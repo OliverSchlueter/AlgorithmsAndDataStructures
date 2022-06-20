@@ -1,12 +1,24 @@
-import dataStructures.LinkedList;
-import dataStructures.List;
-import dataStructures.Queue;
-import dataStructures.Stack;
+import dataStructures.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        stackExample();
+        arrayExample();
+    }
+
+    public static void arrayExample(){
+        Array<String> array = new Array<>(5);
+        array.set(0, "1");
+
+        Array<String> array2 = new Array<>(31);
+        array2.set(0, "2");
+        array2.free();
+
+        Array<String> array3 = new Array<>(23);
+        array3.set(0, "3");
+        array3.set(1, "31");
+
+        System.out.println(Array.memoryDump());
     }
 
     public static void stackExample(){
