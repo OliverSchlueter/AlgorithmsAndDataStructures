@@ -9,7 +9,12 @@ class ListTest {
 
     @BeforeEach
     void setUp(){
-        list = new List<>(new Integer[]{1, 2, 3, 4, 5});
+        list = new List<>();
+        list.pushEnd(1);
+        list.pushEnd(2);
+        list.pushEnd(3);
+        list.pushEnd(4);
+        list.pushEnd(5);
     }
 
     @Test
@@ -52,7 +57,7 @@ class ListTest {
 
     @Test
     void get() {
-        assert list.get(3) == list.getDataArray()[3];
+        assert list.get(3) == list.getDataArray().get(3);
     }
 
     @Test

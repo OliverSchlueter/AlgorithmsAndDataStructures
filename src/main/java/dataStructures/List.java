@@ -6,38 +6,38 @@ public class List<T> {
     protected static final int DEFAULT_ARRAY_SIZE = 20;
     protected static final float RESIZE_FACTOR = 1.5f;
 
-    protected Object[] dataArray;
+    protected Array<T> dataArray;
     protected int size;
 
     public List() {
-        this.dataArray = new Object[DEFAULT_ARRAY_SIZE];
+        this.dataArray = new Array<>(DEFAULT_ARRAY_SIZE);
     }
     
-    public List(T[] data){
+    public List(Array<T> data){
         this.dataArray = data;
-        this.size = data.length;
+        this.size = data.getSize();
     }
     
     public void pushEnd(T data){
-        if(size + 1 > dataArray.length){
+        if(size + 1 > dataArray.getSize()){
             growArray();
         }
 
-        dataArray[size] = data;
+        dataArray.set(size, data);
         size++;
     }
 
     public void pushStart(T data){
-        if(size + 1 > dataArray.length){
+        if(size + 1 > dataArray.getSize()){
             growArray();
         }
 
         // Shift array right
         for(int i = size - 1; i >= 0; i--){
-            dataArray[i + 1] = dataArray[i];
+            dataArray.set(i + 1, dataArray.get(i));
         }
 
-        dataArray[0] = data;
+        dataArray.set(0, data);
         size++;
     }
 
@@ -47,12 +47,12 @@ public class List<T> {
         }
 
         for(int j = i + 1; j < size; j++){
-            dataArray[j - 1] = dataArray[j];
+            dataArray.set(j - 1, dataArray.get(j));
         }
 
         size--;
 
-        float potentialNewSize = dataArray.length / RESIZE_FACTOR;
+        float potentialNewSize = dataArray.getSize() / RESIZE_FACTOR;
         if(potentialNewSize > size && potentialNewSize > DEFAULT_ARRAY_SIZE){
             shrinkArray();
         }
@@ -64,7 +64,7 @@ public class List<T> {
     }
 
     public void clear(){
-        dataArray = new Object[DEFAULT_ARRAY_SIZE];
+        dataArray = new Array<>(DEFAULT_ARRAY_SIZE);
         size = 0;
     }
 
@@ -73,7 +73,7 @@ public class List<T> {
             throw new IndexOutOfBoundsException();
         }
 
-        dataArray[i] = data;
+        dataArray.set(i, data);
     }
 
     public T get(int i){
@@ -81,12 +81,12 @@ public class List<T> {
             throw new IndexOutOfBoundsException();
         }
 
-        return (T) dataArray[i];
+        return dataArray.get(i);
     }
 
     public int indexOf(T data){
         for (int i = 0; i < size; i++) {
-            if(dataArray[i].equals(data)){
+            if(dataArray.get(i).equals(data)){
                 return i;
             }
         }
@@ -96,7 +96,7 @@ public class List<T> {
 
     public boolean contains(T data){
         for (int i = 0; i < size; i++) {
-            if(dataArray[i].equals(data)){
+            if(dataArray.get(i).equals(data)){
                 return true;
             }
         }
@@ -105,18 +105,18 @@ public class List<T> {
     }
 
     private void growArray(){
-        Object[] newArray = new Object[(int)(dataArray.length * RESIZE_FACTOR)];
+        Array<T> newArray = new Array<>((int)(dataArray.getSize() * RESIZE_FACTOR));
         for (int i = 0; i < size; i++) {
-            newArray[i] = dataArray[i];
+            newArray.set(i, dataArray.get(i));
         }
 
         dataArray = newArray;
     }
 
     private void shrinkArray(){
-        Object[] newArray = new Object[(int)(dataArray.length / RESIZE_FACTOR)];
+        Array<T> newArray = new Array<>((int)(dataArray.getSize() / RESIZE_FACTOR));
         for (int i = 0; i < size; i++) {
-            newArray[i] = dataArray[i];
+            newArray.set(i, dataArray.get(i));
         }
 
         dataArray = newArray;
@@ -131,7 +131,7 @@ public class List<T> {
         }
 
         for (int i = 0; i < size; i++) {
-            str.append(dataArray[i].toString() + ", ");
+            str.append(dataArray.get(i).toString() + ", ");
         }
 
         str = new StringBuilder(str.substring(0, str.length() - 2));
@@ -141,7 +141,7 @@ public class List<T> {
         return str.toString();
     }
 
-    public Object[] getDataArray() {
+    public Array<T> getDataArray() {
         return dataArray;
     }
 
