@@ -8,7 +8,7 @@ package dataStructures;
  * null means that the cell is free
  */
 public class Array<T> {
-    public static Object[] MEMORY = new Object[1024]; // 1 GB = 1048576
+    public static Object[] MEMORY = new Object[1024];
 
     private int size;
     private int startPtr;

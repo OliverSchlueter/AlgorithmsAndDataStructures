@@ -104,6 +104,23 @@ public class List<T> {
         return false;
     }
 
+    public List<T> subList(int start, int end){
+        if(end < start){
+            throw new RuntimeException("End-index can not be lower than start-index");
+        }
+
+        if(start < 0 || start >= size || end >= size){
+            throw new IndexOutOfBoundsException();
+        }
+
+        List<T> subList = new List<>();
+        for (int i = start; i <= end; i++) {
+            subList.pushEnd(dataArray.get(i));
+        }
+
+        return subList;
+    }
+
     private void growArray(){
         Array<T> newArray = new Array<>((int)(dataArray.getSize() * RESIZE_FACTOR));
         for (int i = 0; i < size; i++) {
