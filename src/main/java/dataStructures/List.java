@@ -3,11 +3,11 @@ package dataStructures;
 import java.util.NoSuchElementException;
 
 public class List<T> {
-    private static final int DEFAULT_ARRAY_SIZE = 20;
-    private static final float RESIZE_FACTOR = 1.5f;
+    protected static final int DEFAULT_ARRAY_SIZE = 20;
+    protected static final float RESIZE_FACTOR = 1.5f;
 
-    private Object[] dataArray;
-    private int size;
+    protected Object[] dataArray;
+    protected int size;
 
     public List() {
         this.dataArray = new Object[DEFAULT_ARRAY_SIZE];

@@ -1,7 +1,7 @@
 package dataStructures;
 
 public class LinkedList<T> {
-    private LinkedListElement<T> first;
+    protected LinkedListElement<T> first;
 
     public LinkedList(){ }
 
