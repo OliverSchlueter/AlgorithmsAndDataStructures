@@ -1,9 +1,20 @@
+
+import algorithms.searching.LinearSearch;
 import dataStructures.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        arrayExample();
+        List<Integer> list = new List<>();
+        list.pushEnd(3);
+        list.pushEnd(11);
+        list.pushEnd(21);
+        list.pushEnd(55);
+
+
+        LinearSearch<Integer> linearSearch = new LinearSearch<>();
+        int res = linearSearch.search(55, list);
+        System.out.println(res);
     }
 
     public static void arrayExample(){
@@ -12,7 +23,6 @@ public class Main {
 
         Array<String> array2 = new Array<>(31);
         array2.set(0, "2");
-        array2.free();
 
         Array<String> array3 = new Array<>(23);
         array3.set(0, "3");
