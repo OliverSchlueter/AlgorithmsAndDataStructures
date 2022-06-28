@@ -1,4 +1,5 @@
 import algorithms.*;
+import algorithms.sorting.BubbleSort;
 import algorithms.sorting.InsertionSort;
 import algorithms.sorting.SelectionSort;
 import dataStructures.*;
@@ -19,14 +20,14 @@ public class Main {
         List<Integer> list = new List<>();
         list.pushEnd(30);
         list.pushEnd(10);
-        list.pushEnd(50);
-        list.pushEnd(20);
         list.pushEnd(5);
+        list.pushEnd(50);
+        list.pushEnd(-1);
+        list.pushEnd(20);
 
-        InsertionSort insertionSort = new InsertionSort();
-        List<Integer> sorted =  insertionSort.sort(list);
-
-        System.out.println(sorted);
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.sort(list);
+        System.out.println(list);
     }
 
     public static void hashMapExample(){
