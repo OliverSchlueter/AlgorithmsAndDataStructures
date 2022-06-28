@@ -14,7 +14,7 @@ public class Main {
         //memorySegment.fill((byte) '\0');
         //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
-        hashMapExample();
+
     }
 
     public static void hashMapExample(){
@@ -26,6 +26,40 @@ public class Main {
         hashMap.remove("Peter");
 
         System.out.println(hashMap);
+    }
+
+    public static void arraySpeedTest(){
+        final int SIZE = 1000;
+
+        long time = System.nanoTime();
+        Integer[] javaArray = new Integer[SIZE];
+
+        for (int i = 0; i < SIZE; i++) {
+            javaArray[i] = i * i;
+        }
+
+        for (int i = 0; i < SIZE; i++) {
+            int a = javaArray[i];
+        }
+
+        time = System.nanoTime() - time;
+
+        System.out.println("Java: " + time + "ns");
+
+        time = System.nanoTime();
+        Array<Integer> myArray = new Array<>(SIZE);
+
+        for (int i = 0; i < SIZE; i++) {
+            myArray.set(i, i * i);
+        }
+
+        for (int i = 0; i < SIZE; i++) {
+            int a = myArray.get(i);
+        }
+
+        time = System.nanoTime() - time;
+
+        System.out.println("My: " + time + "ns");
     }
 
     public static void arrayExample(){

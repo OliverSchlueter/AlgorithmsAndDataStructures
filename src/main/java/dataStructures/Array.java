@@ -4,6 +4,8 @@ package dataStructures;
  * Note: not exactly sure if it works this way
  * The MEMORY is a simulation of the actual RAM
  *
+ * This implementation is ~ 10-20 times slower than the given implementation
+ *
  * '\0' means that the cell is reserved
  * null means that the cell is free
  */
