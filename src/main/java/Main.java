@@ -1,4 +1,5 @@
 import algorithms.*;
+import algorithms.sorting.SelectionSort;
 import dataStructures.*;
 import jdk.incubator.foreign.MemoryAddress;
 import jdk.incubator.foreign.MemorySegment;
