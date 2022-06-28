@@ -55,6 +55,15 @@ public class Array<T> {
         startPtr = -1;
     }
 
+    public Array<T> clone(){
+        Array<T> newArray = new Array<>(size);
+        for (int i = 0; i < size; i++) {
+            newArray.set(i, get(i));
+        }
+
+        return newArray;
+    }
+
     private int findPlaceInMemory(){
 
         if(size > MEMORY.length){
