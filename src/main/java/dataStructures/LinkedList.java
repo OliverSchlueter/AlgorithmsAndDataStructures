@@ -141,6 +141,23 @@ public class LinkedList<T> {
 
     }
 
+    public void remove(T search){
+        LinkedListElement<T> element = findElementByData(search);
+
+        if(element == null){
+            return;
+        }
+
+        LinkedListElement<T> previous = getPreviousOfElement(element);
+        if(previous == null){
+            first = first.getNext();
+            return;
+        }
+        previous.setNext(element.getNext());
+        element.setNext(null);
+        element.setData(null);
+    }
+
     public void clear(){
         first = null;
     }
@@ -175,6 +192,24 @@ public class LinkedList<T> {
         }
 
         return null;
+    }
+
+    public List<T> toList(){
+        List<T> list = new List<>();
+
+        if(first == null){
+            return list;
+        }
+
+        LinkedListElement<T> current = first;
+        while(current.getNext() != null){
+            list.pushEnd(current.getData());
+            current = current.getNext();
+        }
+
+        list.pushEnd(current.getData());
+
+        return list;
     }
 
     @Override

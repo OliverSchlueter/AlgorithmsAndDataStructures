@@ -1,20 +1,31 @@
-
-import algorithms.searching.LinearSearch;
+import algorithms.*;
 import dataStructures.*;
+import jdk.incubator.foreign.MemoryAddress;
+import jdk.incubator.foreign.MemorySegment;
+import jdk.incubator.foreign.ResourceScope;
+import jdk.incubator.foreign.ValueLayout;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> list = new List<>();
-        list.pushEnd(3);
-        list.pushEnd(11);
-        list.pushEnd(21);
-        list.pushEnd(55);
+        // Add '--add-modules jdk.incubator.foreign' to VM options and 'Java Compiler - Additional command line parameters'
+        //MemorySegment memorySegment = MemorySegment.allocateNative(100L, ResourceScope.globalScope());
+        //memorySegment.fill((byte) '\0');
+        //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
+        hashMapExample();
+    }
 
-        LinearSearch<Integer> linearSearch = new LinearSearch<>();
-        int res = linearSearch.search(55, list);
-        System.out.println(res);
+    public static void hashMapExample(){
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("Oliver", 42);
+        hashMap.put("Peter", 15);
+        hashMap.put("Hans", 37);
+
+        hashMap.remove("Peter");
+
+        System.out.println(hashMap);
     }
 
     public static void arrayExample(){
