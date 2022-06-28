@@ -1,4 +1,5 @@
 import algorithms.*;
+import algorithms.sorting.BogoSort;
 import algorithms.sorting.BubbleSort;
 import algorithms.sorting.InsertionSort;
 import algorithms.sorting.SelectionSort;
@@ -25,8 +26,8 @@ public class Main {
         list.pushEnd(-1);
         list.pushEnd(20);
 
-        BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.sort(list);
+        BogoSort bogoSort = new BogoSort();
+        bogoSort.sort(list);
         System.out.println(list);
     }
 

@@ -10,7 +10,7 @@ package dataStructures;
  * null means that the cell is free
  */
 public class Array<T> {
-    public static Object[] MEMORY = new Object[1000000];
+    public static Object[] MEMORY = new Object[10000000];
 
     private int size;
     private int startPtr;
