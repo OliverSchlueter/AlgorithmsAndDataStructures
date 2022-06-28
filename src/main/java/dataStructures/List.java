@@ -40,6 +40,60 @@ public class List<T> {
         dataArray.set(0, data);
         size++;
     }
+    
+    public void pushBefore(int i, T data){
+        if(i < 0 || i > size){
+            throw new IndexOutOfBoundsException();
+        }
+
+        if(i == 0){
+            pushStart(data);
+            return;
+        }
+
+        if(i == size){
+            pushEnd(data);
+            return;
+        }
+
+        if(size + 1 > dataArray.getSize()){
+            growArray();
+        }
+
+        for(int j = size - 1; j >= i-1; j--){
+            dataArray.set(j + 1, dataArray.get(j));
+        }
+
+        set(i, data);
+        size++;
+    }
+    
+    public void pushAfter(int i, T data){
+        if(i < -1 || i >= size){
+            throw new IndexOutOfBoundsException();
+        }
+
+        if(size + 1 > dataArray.getSize()){
+            growArray();
+        }
+
+        if(i == -1){
+            pushStart(data);
+            return;
+        }
+
+        if(i == size-1){
+            pushEnd(data);
+            return;
+        }
+
+        for(int j = size - 1; j >= i+1; j--){
+            dataArray.set(j + 1, dataArray.get(j));
+        }
+
+        set(i + 1, data);
+        size++;
+    }
 
     public void removeAtIndex(int i){
         if(i < 0 || i >= size){

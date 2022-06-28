@@ -7,15 +7,15 @@ import org.junit.jupiter.api.RepeatedTest;
 import java.util.Random;
 
 
-class SelectionSortTest {
+class InsertionSortTest {
 
     final Random random = new Random();
-    final SelectionSort selectionSort = new SelectionSort();
+    final InsertionSort insertionSort = new InsertionSort();
 
     List<Integer> input;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         input = new List<>();
         for (int i = 0; i < 1000; i++) {
             input.pushEnd(random.nextInt(-100, 100));
@@ -24,9 +24,9 @@ class SelectionSortTest {
 
     @RepeatedTest(100)
     void sort() {
-        selectionSort.sort(input);
-        for (int i = 0; i < input.getSize() - 1; i++) {
-            assert input.get(i) <= input.get(i + 1);
+        List<Integer> sorted = insertionSort.sort(input);
+        for (int i = 0; i < sorted.getSize() - 1; i++) {
+            assert sorted.get(i) <= sorted.get(i + 1);
         }
     }
 }

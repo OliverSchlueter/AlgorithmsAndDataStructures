@@ -1,4 +1,5 @@
 import algorithms.*;
+import algorithms.sorting.InsertionSort;
 import algorithms.sorting.SelectionSort;
 import dataStructures.*;
 import jdk.incubator.foreign.MemoryAddress;
@@ -15,7 +16,17 @@ public class Main {
         //memorySegment.fill((byte) '\0');
         //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
+        List<Integer> list = new List<>();
+        list.pushEnd(30);
+        list.pushEnd(10);
+        list.pushEnd(50);
+        list.pushEnd(20);
+        list.pushEnd(5);
 
+        InsertionSort insertionSort = new InsertionSort();
+        List<Integer> sorted =  insertionSort.sort(list);
+
+        System.out.println(sorted);
     }
 
     public static void hashMapExample(){
