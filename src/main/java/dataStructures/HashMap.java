@@ -14,7 +14,6 @@ public class HashMap<K, V> {
     }
 
     public void put(K key, V value){
-        // TODO: check to resize
         if(size >= hashMap.length){
             grow();
         }
