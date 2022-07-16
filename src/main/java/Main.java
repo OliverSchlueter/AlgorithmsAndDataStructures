@@ -18,17 +18,26 @@ public class Main {
         //memorySegment.fill((byte) '\0');
         //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
-        List<Integer> list = new List<>();
-        list.pushEnd(30);
-        list.pushEnd(10);
-        list.pushEnd(5);
-        list.pushEnd(50);
-        list.pushEnd(-1);
-        list.pushEnd(20);
+        binaryTreeExample();
 
-        BogoSort bogoSort = new BogoSort();
-        bogoSort.sort(list);
-        System.out.println(list);
+    }
+
+    public static void binaryTreeExample(){
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(
+                1,
+                new BinaryTree<>(
+                        2,
+                        new BinaryTree<>(4),
+                        new BinaryTree<>(5)
+                ),
+                new BinaryTree<>(
+                        3,
+                        new BinaryTree<>(6),
+                        new BinaryTree<>(7)
+                )
+        );
+
+        System.out.println(binaryTree);
     }
 
     public static void hashMapExample(){
