@@ -1,4 +1,5 @@
 import algorithms.*;
+import algorithms.searching.BinarySearch;
 import algorithms.sorting.BogoSort;
 import algorithms.sorting.BubbleSort;
 import algorithms.sorting.InsertionSort;
@@ -9,6 +10,8 @@ import jdk.incubator.foreign.MemorySegment;
 import jdk.incubator.foreign.ResourceScope;
 import jdk.incubator.foreign.ValueLayout;
 
+import java.util.ArrayList;
+
 
 public class Main {
 
@@ -18,8 +21,22 @@ public class Main {
         //memorySegment.fill((byte) '\0');
         //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
-        binaryTreeExample();
+        binarySearchExample();
 
+    }
+
+    public static void binarySearchExample(){
+        java.util.List<Integer> input = new ArrayList<>();
+        input.add(2);
+        input.add(5);
+        input.add(8);
+        input.add(13);
+        input.add(19);
+        input.add(23);
+
+        BinarySearch binarySearch = new BinarySearch();
+        int result = binarySearch.search(13, input);
+        System.out.println("index of '13' is: " + result);
     }
 
     public static void binaryTreeExample(){
