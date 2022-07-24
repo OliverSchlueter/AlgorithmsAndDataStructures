@@ -23,8 +23,23 @@ public class Main {
         //memorySegment.fill((byte) '\0');
         //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
-        breadthFirstSearch();
+        graphExample();
 
+    }
+
+    public static void graphExample(){
+        GraphNode<String> berlin = new GraphNode<>("Berlin");
+        GraphNode<String> leipzig = new GraphNode<>("Leipzig");
+        GraphNode<String> hamburg = new GraphNode<>("Hamburg");
+
+        berlin.withEdge(leipzig, 1f);
+        berlin.withEdge(hamburg, 1.4f);
+
+        leipzig.withEdge(berlin, 1f);
+
+        hamburg.withEdge(berlin, 1.4f);
+
+        System.out.println(berlin);
     }
 
     public static void breadthFirstSearch(){
