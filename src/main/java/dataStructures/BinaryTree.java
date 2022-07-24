@@ -22,24 +22,27 @@ public class BinaryTree<T> {
         return value;
     }
 
-    public void setValue(T value) {
+    public BinaryTree<T> setValue(T value) {
         this.value = value;
+        return this;
     }
 
     public BinaryTree<T> getLeft() {
         return left;
     }
 
-    public void setLeft(BinaryTree<T> left) {
+    public BinaryTree<T> setLeft(BinaryTree<T> left) {
         this.left = left;
+        return this;
     }
 
     public BinaryTree<T> getRight() {
         return right;
     }
 
-    public void setRight(BinaryTree<T> right) {
+    public BinaryTree<T> setRight(BinaryTree<T> right) {
         this.right = right;
+        return this;
     }
 
     @Override
