@@ -1,5 +1,6 @@
 import algorithms.*;
 import algorithms.searching.BinarySearch;
+import algorithms.searching.BreadthFirstSearch;
 import algorithms.searching.DepthFirstSearch;
 import algorithms.sorting.BogoSort;
 import algorithms.sorting.BubbleSort;
@@ -22,8 +23,21 @@ public class Main {
         //memorySegment.fill((byte) '\0');
         //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
-        depthFirstSearch();
+        breadthFirstSearch();
 
+    }
+
+    public static void breadthFirstSearch(){
+        BinaryTree<Character> binaryTree = new BinaryTree<>('a')
+                .setLeft(new BinaryTree<>('b')
+                        .setLeft(new BinaryTree<>('d'))
+                        .setRight(new BinaryTree<>('e')))
+                .setRight(new BinaryTree<>('c')
+                        .setLeft(new BinaryTree<>('f')));
+
+        BreadthFirstSearch<Character> breadthFirstSearch = new BreadthFirstSearch<>();
+        boolean found = breadthFirstSearch.search('f', binaryTree);
+        System.out.println("Found: " + found);
     }
 
     public static void depthFirstSearch(){
