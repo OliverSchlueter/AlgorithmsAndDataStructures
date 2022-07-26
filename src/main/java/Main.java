@@ -24,7 +24,6 @@ public class Main {
         //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
         graphExample();
-
     }
 
     public static void graphExample(){
@@ -37,7 +36,7 @@ public class Main {
 
         leipzig.withEdge(berlin, 1f);
 
-        hamburg.withEdge(berlin, 1.4f);
+        hamburg.withEdge(berlin, 1.5f);
 
         System.out.println(berlin);
     }

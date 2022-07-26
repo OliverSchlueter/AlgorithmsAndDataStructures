@@ -15,5 +15,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="--add-modules jdk.incubator.foreign" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AlgorithmsAndDataStructures" options="" />
+    </option>
   </component>
 </project>
