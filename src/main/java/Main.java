@@ -7,10 +7,7 @@ import algorithms.sorting.BubbleSort;
 import algorithms.sorting.InsertionSort;
 import algorithms.sorting.SelectionSort;
 import dataStructures.*;
-import jdk.incubator.foreign.MemoryAddress;
-import jdk.incubator.foreign.MemorySegment;
-import jdk.incubator.foreign.ResourceScope;
-import jdk.incubator.foreign.ValueLayout;
+
 
 import java.util.ArrayList;
 
