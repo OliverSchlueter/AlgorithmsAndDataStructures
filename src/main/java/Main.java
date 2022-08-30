@@ -20,7 +20,7 @@ public class Main {
         //memorySegment.fill((byte) '\0');
         //memorySegment.set(ValueLayout.JAVA_INT, 12, 1337);
 
-        graphExample()
+        graphExample();
     }
 
     public static void graphExample(){
