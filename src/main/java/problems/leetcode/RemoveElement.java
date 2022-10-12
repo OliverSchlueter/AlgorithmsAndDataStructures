@@ -1,3 +1,5 @@
+package problems.leetcode;
+
 public class RemoveElement {
 
     /*
