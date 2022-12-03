@@ -1,11 +1,6 @@
-import algorithms.*;
 import algorithms.searching.BinarySearch;
 import algorithms.searching.BreadthFirstSearch;
 import algorithms.searching.DepthFirstSearch;
-import algorithms.sorting.BogoSort;
-import algorithms.sorting.BubbleSort;
-import algorithms.sorting.InsertionSort;
-import algorithms.sorting.SelectionSort;
 import dataStructures.*;
 
 
