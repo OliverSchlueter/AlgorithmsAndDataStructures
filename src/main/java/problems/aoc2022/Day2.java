@@ -54,7 +54,7 @@ public class Day2 {
         }
     }
 
-    public int Part1(){
+    public int part1(){
         String input = InputHelper.readInput("input2.txt");
 
         int totalScore = 0;
@@ -77,7 +77,7 @@ public class Day2 {
         return totalScore;
     }
 
-    public int Part2(){
+    public int part2(){
         String input = InputHelper.readInput("input2.txt");
 
         int totalScore = 0;
@@ -121,8 +121,8 @@ public class Day2 {
 
     public static void main(String[] args) {
         Day2 day2 = new Day2();
-        System.out.println("Part1: " + day2.Part1());
-        System.out.println("Part2: " + day2.Part2());
+        System.out.println("Part1: " + day2.part1());
+        System.out.println("Part2: " + day2.part2());
     }
 
 }

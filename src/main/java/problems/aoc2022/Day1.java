@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Day1 {
 
-    public int Part1() throws IOException {
+    public int part1() throws IOException {
         String input = InputHelper.readInput("input1.txt");
 
         int max = 0;
@@ -26,7 +26,7 @@ public class Day1 {
         return max;
     }
 
-    public int Part2(){
+    public int part2(){
         String input = InputHelper.readInput("input1.txt");
 
         List<Integer> topElfs = new ArrayList<>();
@@ -53,8 +53,8 @@ public class Day1 {
     public static void main(String[] args) {
         Day1 day1 = new Day1();
         try {
-            System.out.println("Part1: " + day1.Part1());
-            System.out.println("Part2: " + day1.Part2());
+            System.out.println("Part1: " + day1.part1());
+            System.out.println("Part2: " + day1.part2());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

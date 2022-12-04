@@ -2,7 +2,7 @@ package problems.aoc2022;
 
 public class Day3 {
 
-    public int Part1(){
+    public int part1(){
         String input = InputHelper.readInput("input3.txt");
 
         int sum = 0;
@@ -24,7 +24,7 @@ public class Day3 {
         return sum;
     }
 
-    public int Part2(){
+    public int part2(){
         String input = InputHelper.readInput("input3.txt");
 
         int sum = 0;
@@ -52,7 +52,8 @@ public class Day3 {
 
     public static void main(String[] args) {
         Day3 day3 = new Day3();
-        System.out.println(day3.Part2());
+        System.out.println("Part1: " + day3.part1());
+        System.out.println("Part2: " + day3.part2());
     }
 
 }
