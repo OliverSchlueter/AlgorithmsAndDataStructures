@@ -1,7 +1,6 @@
 package problems.aoc2022;
 
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 

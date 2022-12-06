@@ -1,10 +1,5 @@
 package problems.aoc2022;
 
-import dataStructures.List;
-
-import java.util.HashSet;
-import java.util.Set;
-
 public class Day6 {
 
     public boolean checkIfCharsAreDifferent(char ... c){
