@@ -2,7 +2,7 @@ package problems.leetcode;
 
 public class ReverseString {
 
-    /**
+    /*
      * https://leetcode.com/problems/reverse-string/
      */
 
