@@ -19,3 +19,10 @@ The repository includes implementations of a wide range of algorithms and data s
 Feel free to explore the repository and browse through the different implementations.
 
 To use any of the code in your own projects, simply copy the relevant files into your Java project and import them as needed. Additionally, the code includes comments explaining the logic and usage of each algorithm or data structure.
+
+## Resources
+
+Here are some additional resources that you may find helpful:
+
+ - [Advent of Code](https://adventofcode.com/) - An annual coding challenge that provides a great opportunity to apply algorithms and data structures to solve puzzles.
+ - [LeetCode](https://leetcode.com/) - A platform with a vast collection of coding problems, allowing you to practice your algorithmic skills.
