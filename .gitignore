@@ -1,5 +1,5 @@
-.idea/
-target/
+.idea
+target
 # Ignore Gradle project-specific cache directory
 .gradle
 
